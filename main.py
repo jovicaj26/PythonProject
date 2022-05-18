@@ -1,3 +1,5 @@
+from module_collections import average_grades_score
+from module_collections import count_grades
 from exercise7 import examine_csv
 from exercise7 import clear_data
 from exercise7 import read_file
@@ -76,6 +78,10 @@ if __name__ == '__main__':
         print(df2)
         print("\n")
 
+        print("Saving new data to data2.csv:")
+        write_to_file(df2, "data2.csv")
+        print("\n")
+        df3 = df2
         # print("Task 3. Drawing plot...")
         # grade_gender_dependency(df2)
         # plt.show()
@@ -89,6 +95,12 @@ if __name__ == '__main__':
 
         # print("Task 5. Usage of numpy:")
         # print("Sorting according to AvgScore:")
+
+        print("Task 6. Usage of Counter from collection:")
+        print("Count the number of each grade.")
+
+        count_grades(df3)
+        average_grades_score(df3)
 
         # users = UserTable("dirtydata.csv", [])
         # print(users.items)
