@@ -68,11 +68,3 @@ class User:
 
     def __str__(self):
         return str(f'User: Sex={self.sex}, AvgScore={self.avg_score}, Grade={self.grade}, Passed={self.passed}')
-
-
-if __name__ == "__main__":
-    dt = pd.read_csv('dirtydata.csv')
-    # print(dt)
-    users = UserTable(dt)
-    # print(f"Total number of students: {len(users)}")
-    # print(User({"Sex": "Male", "AvgScore": "89", "Grade": "B"}))

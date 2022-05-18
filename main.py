@@ -2,6 +2,8 @@ from exercise7 import examine_csv
 from exercise7 import clear_data
 from exercise7 import read_file
 from exercise7 import write_to_file
+from user import User
+from user import UserTable
 
 from module_pandas import add_grade_column
 from module_pandas import grade_gender_dependency
@@ -87,3 +89,7 @@ if __name__ == '__main__':
 
         # print("Task 5. Usage of numpy:")
         # print("Sorting according to AvgScore:")
+
+        users = UserTable(df2)
+        # print(f"Total number of students: {len(users)}")
+        # print(User({"Sex": "Male", "AvgScore": "89", "Grade": "B"}))
