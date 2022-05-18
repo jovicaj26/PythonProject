@@ -50,10 +50,10 @@ if __name__ == '__main__':
         print(df2[["Sex", "MaxScore"]].groupby("Sex").mean())
         print("\n")
 
-        print("Task 7 - Plotting ...")
-        df2.plot(x="Sex", y="AvgScore")
-        plt.show()
-        print("\n")
+        # print("Task 7 - Plotting ...")
+        # df2.plot(x="Sex", y="AvgScore")
+        # plt.show()
+        # print("\n")
 
     # END OF M7 EXERCISE
     #  START OF PROJECT
@@ -76,10 +76,10 @@ if __name__ == '__main__':
         print(df2)
         print("\n")
 
-        print("Task 3. Drawing plot...")
-        grade_gender_dependency(df2)
-        plt.show()
-        print("\n")
+        # print("Task 3. Drawing plot...")
+        # grade_gender_dependency(df2)
+        # plt.show()
+        # print("\n")
 
         print("Task 4. Show all negative minimal scores:")
         df2, num = show_negative_minimal_scores(df2)
@@ -90,6 +90,7 @@ if __name__ == '__main__':
         # print("Task 5. Usage of numpy:")
         # print("Sorting according to AvgScore:")
 
-        users = UserTable(df2)
+        users = UserTable(str("dirtydata.csv"))
+        print(users)
         # print(f"Total number of students: {len(users)}")
         # print(User({"Sex": "Male", "AvgScore": "89", "Grade": "B"}))
