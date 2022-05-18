@@ -3,18 +3,19 @@ from unicodedata import numeric
 import pandas as pd
 
 
-class UserTable:
-    def __init__(self, filename):
+class UserTable():
+    def __init__(self, filename, Users):
         self.data_table = pd.read_csv(filename)
+        self.items = list(Users)
 
     def __len__(self):
         return len(self.data_table.index.value_counts())
 
     def __getitem__(self, key):
-        return self.data_table[key]
+        return self.data_table[key]  # TODO
 
 
-class User:
+class User():
     def __init__(self, data_table):
         self.sex = data_table["Sex"]
         self.duration = data_table["Duration"]

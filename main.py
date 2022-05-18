@@ -90,7 +90,7 @@ if __name__ == '__main__':
         # print("Task 5. Usage of numpy:")
         # print("Sorting according to AvgScore:")
 
-        users = UserTable(str("dirtydata.csv"))
-        print(users)
+        # users = UserTable("dirtydata.csv", [])
+        # print(users.items)
         # print(f"Total number of students: {len(users)}")
         # print(User({"Sex": "Male", "AvgScore": "89", "Grade": "B"}))
