@@ -1,8 +1,16 @@
 def add_pass_column(df):
+    """
+    Add Pass column, with value [True, False], depend of value
+    from colum MinScore.
+    """
     df["Pass"] = df["MinScore"] >= 15
 
 
 def add_grade_column(df):
+    """
+    Add Grade column, with value [A, B, C, D, F], depend of value
+    from columns Pass and AvgScore.
+    """
     grade = []
     for x in df.index:
         if df.loc[x, "Pass"]:
@@ -27,7 +35,10 @@ def grade_gender_dependency(df):
 
 
 def show_negative_minimal_scores(df):
-
+    """
+    Calculate and return number of negative minimum scores
+    and data frame containing only rows with 'F'.
+    """
     df = df[df["Grade"] == "F"]
     sh = df[df["Grade"] == "F"].shape
     num = sh[0]
