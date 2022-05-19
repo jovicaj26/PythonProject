@@ -94,6 +94,7 @@ if __name__ == '__main__':
 
         print("Task 5. Represent all grades as a sorted numpy array:")
         sort_grades(df2)
+        print("\n")
 
         print("Task 6. Usage of Counter from collection:")
         print("Count the number of each grade.")
