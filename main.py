@@ -4,8 +4,8 @@ from exercise7 import examine_csv
 from exercise7 import clear_data
 from exercise7 import read_file
 from exercise7 import write_to_file
-# from user import User
-# from user import UserTable
+from user import User
+from user import UserTable
 
 from module_pandas import add_grade_column
 from module_pandas import grade_gender_dependency
@@ -96,11 +96,15 @@ if __name__ == '__main__':
 
         print("Task 6. Usage of Counter from collection:")
         print("Count the number of each grade.")
-
         count_grades(df3)
         average_grades_score(df3)
 
-        # users = UserTable("dirtydata.csv", [])
-        # print(users.items)
-        # print(f"Total number of students: {len(users)}")
-        # print(User({"Sex": "Male", "AvgScore": "89", "Grade": "B"}))
+        print("\n")
+        print("Task 7. Classes:")
+        users = UserTable("data2.csv")
+        print(users.user_list[0])
+        jovica = User("xyz", "300", "17", "29", "23", "Yes", "A")
+        users.set_user(jovica, 0)
+        print(users.user_list[0])
+        print(f"Total number of students: {len(users)}")
+        print("\n")
