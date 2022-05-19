@@ -4,8 +4,8 @@ from exercise7 import examine_csv
 from exercise7 import clear_data
 from exercise7 import read_file
 from exercise7 import write_to_file
-from user import User
-from user import UserTable
+# from user import User
+# from user import UserTable
 
 from module_pandas import add_grade_column
 from module_pandas import grade_gender_dependency
