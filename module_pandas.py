@@ -6,6 +6,23 @@ def add_pass_column(df):
     df["Pass"] = df["MinScore"] >= 15
 
 
+def get_grade(avg, passed):
+    """
+    Calculate grade according to average score and passed boolean
+    """
+    if passed:
+        if avg > 60:
+            return "A"
+        elif 50 < avg <= 60:
+            return "B"
+        elif 40 < avg <= 50:
+            return "C"
+        else:
+            return "D"
+    else:
+        return "F"
+
+
 def add_grade_column(df):
     """
     Add Grade column, with value [A, B, C, D, F], depend of value
@@ -13,18 +30,7 @@ def add_grade_column(df):
     """
     grade = []
     for x in df.index:
-        if df.loc[x, "Pass"]:
-            avg = df.loc[x, "AvgScore"]
-            if avg > 60:
-                grade.append("A")
-            elif 50 < avg <= 60:
-                grade.append("B")
-            elif 40 < avg <= 50:
-                grade.append("C")
-            elif avg <= 40:
-                grade.append("D")
-        else:
-            grade.append("F")
+        grade.append(get_grade(df.loc[x, "AvgScore"], df.loc[x, "Pass"]))
 
     df2 = df["Grade"] = grade
     return df2

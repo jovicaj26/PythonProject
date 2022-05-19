@@ -102,9 +102,17 @@ if __name__ == '__main__':
         print("\n")
         print("Task 7. Classes:")
         users = UserTable("data2.csv")
-        print(users.user_list[0])
-        jovica = User("xyz", "300", "17", "29", "23", "Yes", "A")
-        users.set_user(jovica, 0)
-        print(users.user_list[0])
+        print("First user before setting a new one: ", users.user_list[0])
+        user1 = User("Male", 300, 17, 29, 23, True, "A")
+        users.set_user(user1, 0)
+        print("First user after setting a new one: ", users.user_list[0])
+        print()
+
+        # add user without avg, pass and grade params
+        print("Second user before setting a new one: ", users.user_list[1])
+        user2 = User("Female", 70, 15, 75)
+        users.set_user(user2, 1)
+        print("Second user after setting a new one: ", users.user_list[1])
+
         print(f"Total number of students: {len(users)}")
         print("\n")

@@ -1,5 +1,6 @@
 from builtins import IndexError
 import pandas as pd
+from module_pandas import get_grade
 
 
 class UserTable():
@@ -27,22 +28,32 @@ class UserTable():
             self.user_list.append(user)
 
     def get_user(self, key):
-        return self.user_list[key]
+        if key < len(self.user_list) - 1:
+            return self.user_list[key]
+        else:
+            return None
 
     def set_user(self, user, key):
-        self.user_list[key] = user
-
+        if key < len(self.user_list) - 1:
+            self.user_list[key] = user
+        else:
+            return None
 
 class User():
 
-    def __init__(self, sex, duration, minScore, maxScore, avgScore, passed, grade):
+    def __init__(self, sex, duration, minScore, maxScore, avgScore=None, passed=None, grade=None):
         self.sex = sex
         self.duration = duration
-        self.min_score = minScore
-        self.max_score = maxScore
-        self.avg_score = avgScore
-        self.passed = passed
-        self.grade = grade
+        self.min_score = minScore if minScore > 0 else 0
+        self.max_score = maxScore if maxScore <= 100 else 100
+        if avgScore is not None and passed is not None and grade is not None:
+            self.avg_score = avgScore
+            self.passed = passed
+            self.grade = grade
+        else:
+            self.avg_score = (self.min_score + self.max_score) / 2
+            self.passed = False if self.min_score < 15 else True
+            self.grade = get_grade(self.avg_score, self.passed)
 
     # def get_user(self):
     #     return self
