@@ -4,14 +4,14 @@ from collections import Counter
 
 def count_grades(df):
     c = Counter(df["Grade"])
-    print(c.most_common(5))
+    print(c.most_common())
 
 
 # Calculate the average maximum and average minimum for each grade.
 def average_grades_score(df):
     grades = "ABCDF"
     for grade in grades:
-        dx = df[df["Grade"] == str(grade)]
+        dx = df[df["Grade"] == grade]
         df2 = dx[["MinScore", "MaxScore"]].mean()
         print(f"Grade {grade} average MinScore is: {df2['MinScore']}")
         print(f"Grade {grade} average MaxScore is: {df2['MaxScore']}")

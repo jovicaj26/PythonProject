@@ -99,6 +99,7 @@ if __name__ == '__main__':
         print("Task 6. Usage of Counter from collection:")
         print("Count the number of each grade.")
         count_grades(df3)
+        print("Calculating the average maximum and average minimum for each grade")
         average_grades_score(df3)
 
         print("\n")
