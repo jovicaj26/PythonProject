@@ -39,7 +39,7 @@ def show_negative_minimal_scores(df):
     Calculate and return number of negative minimum scores
     and data frame containing only rows with 'F'.
     """
-    df = df[df["Grade"] == "F"]
     sh = df[df["Grade"] == "F"].shape
     num = sh[0]
-    return df, num
+    print(df[df["Grade"] == "F"])
+    print(f"Number of negative grades is: {num}")

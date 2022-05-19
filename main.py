@@ -88,9 +88,7 @@ if __name__ == '__main__':
         # print("\n")
 
         print("Task 4. Show all negative minimal scores:")
-        df2, num = show_negative_minimal_scores(df2)
-        print(df2)
-        print(f"Number of negative grades is: {num}")
+        show_negative_minimal_scores(df2)
         print("\n")
 
         # print("Task 5. Usage of numpy:")
