@@ -11,6 +11,7 @@ from module_pandas import add_grade_column
 from module_pandas import grade_gender_dependency
 from module_pandas import show_negative_minimal_scores
 from module_pandas import add_pass_column
+from module_numpy import sort_grades
 
 import matplotlib.pyplot as plt
 
@@ -91,8 +92,8 @@ if __name__ == '__main__':
         show_negative_minimal_scores(df2)
         print("\n")
 
-        # print("Task 5. Usage of numpy:")
-        # print("Sorting according to AvgScore:")
+        print("Task 5. Represent all grades as a sorted numpy array:")
+        sort_grades(df2)
 
         print("Task 6. Usage of Counter from collection:")
         print("Count the number of each grade.")
