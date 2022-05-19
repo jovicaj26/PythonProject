@@ -18,7 +18,7 @@ class UserTable():
         if self.key < 0 or self.key > len(self.user_list):
             raise IndexError
 
-        return key
+        return self.user_list[key]
 
     def load_from_table(self, dt):
         for i in dt.index:
@@ -39,6 +39,7 @@ class UserTable():
         else:
             return None
 
+
 class User():
 
     def __init__(self, sex, duration, minScore, maxScore, avgScore=None, passed=None, grade=None):
@@ -54,12 +55,6 @@ class User():
             self.avg_score = (self.min_score + self.max_score) / 2
             self.passed = False if self.min_score < 15 else True
             self.grade = get_grade(self.avg_score, self.passed)
-
-    # def get_user(self):
-    #     return self
-
-    # def set_user(self, sex, duration, minScore, maxScore, avgScore, passed, grade):
-    #     pass
 
     def __str__(self):
         return str(f'User: Sex={self.sex}, AvgScore={self.avg_score}, Grade={self.grade}, Passed={self.passed}')
