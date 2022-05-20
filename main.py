@@ -1,9 +1,11 @@
+import unittest
 from module_collections import average_grades_score
 from module_collections import count_grades
 from exercise7 import examine_csv
 from exercise7 import clear_data
 from exercise7 import read_file
 from exercise7 import write_to_file
+from module_tests import TestUserTable
 from user import User
 from user import UserTable
 
@@ -83,6 +85,7 @@ if __name__ == '__main__':
         write_to_file(df2, "data2.csv")
         print("\n")
         df3 = df2
+        
         # print("Task 3. Drawing plot...")
         # grade_gender_dependency(df2)
         # plt.show()
@@ -119,3 +122,9 @@ if __name__ == '__main__':
 
         print(f"Total number of students: {len(users)}")
         print("\n")
+
+        print("Task 8. Tets")
+        testsuite = unittest.TestLoader().loadTestsFromTestCase(TestUserTable)
+        for test in testsuite._tests:
+            unittest.TextTestRunner(verbosity=2).run(test)
+        

@@ -14,8 +14,7 @@ class UserTable():
         return len(self.dt.index.value_counts())
 
     def __getitem__(self, key):
-        self.key = self.user_list.index
-        if self.key < 0 or self.key > len(self.user_list):
+        if key < 0 or key >= len(self.user_list):
             raise IndexError
 
         return self.user_list[key]
