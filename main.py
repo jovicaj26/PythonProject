@@ -55,10 +55,10 @@ if __name__ == '__main__':
         print(df2[["Sex", "MaxScore"]].groupby("Sex").mean())
         print("\n")
 
-        # print("Task 7 - Plotting ...")
-        # df2.plot(x="Sex", y="AvgScore")
-        # plt.show()
-        # print("\n")
+        print("Task 7 - Plotting ...")
+        df2.plot(x="Sex", y="AvgScore")
+        plt.show()
+        print("\n")
 
     # END OF M7 EXERCISE
     #  START OF PROJECT
@@ -85,11 +85,11 @@ if __name__ == '__main__':
         write_to_file(df2, "data2.csv")
         print("\n")
         df3 = df2
-        
-        # print("Task 3. Drawing plot...")
-        # grade_gender_dependency(df2)
-        # plt.show()
-        # print("\n")
+
+        print("Task 3. Drawing plot...")
+        grade_gender_dependency(df2)
+        plt.show()
+        print("\n")
 
         print("Task 4. Show all negative minimal scores:")
         show_negative_minimal_scores(df2)
@@ -102,7 +102,7 @@ if __name__ == '__main__':
         print("Task 6. Usage of Counter from collection:")
         print("Count the number of each grade.")
         count_grades(df3)
-        print("Calculating the average maximum and average minimum for each grade")
+        print("Calculating the average maximum and minimum for each grade")
         average_grades_score(df3)
 
         print("\n")
@@ -127,4 +127,3 @@ if __name__ == '__main__':
         testsuite = unittest.TestLoader().loadTestsFromTestCase(TestUserTable)
         for test in testsuite._tests:
             unittest.TextTestRunner(verbosity=2).run(test)
-        

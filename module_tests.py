@@ -3,6 +3,7 @@ import sys
 import pandas as pd
 from user import User, UserTable
 
+
 class TestUserTable(unittest.TestCase):
 
     def setUp(self):
@@ -36,7 +37,7 @@ class TestUserTable(unittest.TestCase):
     def test_load_from_table(self):
         df = pd.DataFrame(
             {
-                "Sex" : [
+                "Sex": [
                     "Female",
                     "Male",
                     "Male",
@@ -44,12 +45,12 @@ class TestUserTable(unittest.TestCase):
                     "Male",
                     "Male"
                 ],
-                "Duration" : [1, 2, 3, 4, 5, 6],
-                "MinScore" : [25, 25, 25, 25, 25, 25],
+                "Duration": [1, 2, 3, 4, 5, 6],
+                "MinScore": [25, 25, 25, 25, 25, 25],
                 "MaxScore": [100, 100, 100, 100, 100, 100],
-                "AvgScore" : [50, 50, 50, 50, 50, 50],
-                "Passed" : [True, True, True, True, True, True],
-                "Grade" : ["A", "A", "A", "A", "A", "A"]
+                "AvgScore": [50, 50, 50, 50, 50, 50],
+                "Passed": [True, True, True, True, True, True],
+                "Grade": ["A", "A", "A", "A", "A", "A"]
             }
         )
 
