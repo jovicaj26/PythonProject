@@ -73,12 +73,12 @@ class TestUserTable(unittest.TestCase):
 
         self.assertIs(self.user2, user2)
 
-    def test_invalid_get_item(self):
+    def test_invalid_index_operator(self):
 
         try:
             self.userTable[sys.maxsize]
         except IndexError:
-            print("Invalid get item. Key is greater than the length of user table.")
+            print("Invalid index operator. Key is greater than the length of user table.")
 
     def test_invalid_get_item(self):
 
